@@ -1,2 +1,2 @@
 # My-games-repos
-My attempt at fixing  my games issues.
+My attempt at making a video game.
