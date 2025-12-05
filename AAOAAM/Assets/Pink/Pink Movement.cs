@@ -32,6 +32,7 @@ public class PinkMovement : MonoBehaviour
 
         }
 
+        //Makes it destroy and the game reset if it goes out of camura veiw
         if (Camera.main.WorldToScreenPoint(transform.position).y < 0.0f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
