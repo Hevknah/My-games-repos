@@ -11,9 +11,14 @@ public class Enemymovement : MonoBehaviour
     int horzSteps = 10;
     float stepTime = 1.5f;
 
+    //Animation
+	private Animator anim;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //Score
+	public int score, requiredScore;
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
     {
         StartCoroutine(StepBasedMovement());
     }
@@ -21,10 +26,11 @@ public class Enemymovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+		
 
-    IEnumerator StepBasedMovement() 
+	}
+
+	IEnumerator StepBasedMovement() 
     {
         while (true) 
         {
@@ -41,5 +47,42 @@ public class Enemymovement : MonoBehaviour
 
     }
 
+    //Destorys and explodes when touches players and lowers score
 
-}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+
+		if (collision.gameObject.CompareTag("End Point"));
+		{
+			anim.Play("Explode");
+			Destroy(this.gameObject, 1f);
+			
+
+		}
+
+		if (collision.gameObject.CompareTag("Player1")) ;
+		{
+			anim.Play("Explode");
+			Destroy(this.gameObject, 1f);
+			--score;
+
+		}
+
+		if (collision.gameObject.CompareTag("Player2")) ;
+		{
+			anim.Play("Explode");
+			Destroy(this.gameObject, 1f);
+			--score;
+
+		}
+
+
+
+
+
+	}
+
+
+}       
