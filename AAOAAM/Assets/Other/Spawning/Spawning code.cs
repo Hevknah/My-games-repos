@@ -42,7 +42,7 @@ public class Spawningcode : MonoBehaviour
 
 
 
-		var spwan = Instantiate(EnemyPrefab, transform.position, transform.rotation);
+		var spwan2 = Instantiate(EnemyPrefab, transform.position, transform.rotation);
 
 	}
 
